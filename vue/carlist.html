@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="./vue.js"></script>
+	<style>
+		#box{
+			width: 500px;
+			margin: 0 auto;
+		}
+		table{
+			margin-top: 20px;
+			width: 500px;
+			text-align: center;
+			border-collapse: collapse;
+		}
+		.first{
+			background: #c8e7e6;
+			color:rgb(124, 120, 120);
+			font-weight: bold;
+			height: 40px;
+			line-height: 40px;
+		}
+		tr{
+			height: 40px;
+			line-height: 40px;
+			border-bottom: 1px solid #ccc;
+		}
+	
+	</style>
+</head>
+<body>
+		<div id="box">
+				<table>
+					<tr class="first">
+						<td></td>
+						<td>商品名称</td>
+						<td>商品单价</td>
+						<td>商品数量</td>
+						<td>操作</td>
+					</tr>
+					<tr v-for="(it,index) in arr">
+						    <td>{{ index+1 }}</td>
+							<td>{{ it.phone }}</td>
+							<td>{{ it.price }}</td>
+							<td>{{ it.num }}
+								<button @click="add(index)">+</button>
+								<button @click="jian(index)">-</button>
+							</td>
+							<td><button @click="del(index)">移除</button></td>	
+					</tr>
+					
+				</table>
+				<p @click="all">总价：<span >{{ all() }}</span>元</p>
+			</div>
+	
+</body>
+   <script>
+	   new Vue({
+		   el:'#box',
+		   data:{
+			   arr:[
+				   {num:1,phone:'iPhone X',price:7999,},
+				   {num:1,phone:' 荣耀 10',price:2399,},
+				   {num:1,phone:'华为 P20',price:3399,},
+				   {num:1,phone:'小米 8',price:3999,}
+			   ]
+		   },
+		   methods:{
+			   all(){
+				   var num=0;
+				   for(i in this.arr){
+                      num=num+this.arr[i].num*this.arr[i].price;
+				   }
+				   return num;
+				   
+			   },
+			   del(i){
+                  this.arr.splice(i,1)
+			   },
+			   add(i){
+				   this.arr[i].num++;
+			   },
+			   jian(i){		
+				   if(this.arr[i].num>0){
+					this.arr[i].num--;					
+				   }else{
+					this.arr.splice(i,1)
+				   }
+				   	
+				   
+				   
+			   }
+
+		   }
+	   })
+   
+   </script>
+</html>

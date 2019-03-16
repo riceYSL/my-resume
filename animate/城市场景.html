@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>城市场景</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes ball {
+            0%{top: 20px ;left: 10%;transform:scale(0.5) rotateZ(10deg);}
+            25%{top: 25px ;left: 20%;transform:scale(0.5) rotateZ(20deg);}
+            50%{top: 30px ;left: 45%;transform:scale(0.5) rotateZ(-10deg);}
+            75%{top: 20px ;left: 70%;transform:scale(0.5) rotateZ(0deg);}
+            100%{top: 10px ;left: 90%;transform:scale(0.5) rotateZ(15deg);}
+        }
+        @keyframes sky {
+            0%{background: #B69670 }
+            25%{background: #3a6587 }
+            50%{background: #bbe3f7
+            }
+            75%{background: #1a66b3 }
+            100%{background: #B69670 }
+
+        }
+        .sky{
+            width: 1040px;
+            height: 500px;
+            background: #B69670;
+            position: absolute;
+            animation: sky 15s linear infinite ;
+        }
+        .p1{
+            position: absolute;
+            top: 262px;
+            right: 260px;
+            transform: scaleX(2);
+        }
+        .p2{
+            position: absolute;
+            top: 175px;
+            right: 485px;
+            transform: scale(0.5);
+
+        }
+        .p3{
+            position: absolute;
+            top: 182px;
+            right: 460px;
+            transform: scale(0.5);
+
+        }
+        .p4{
+            position: absolute;
+            top: 247px;
+            right:-23px;
+            transform: scaleX(1);
+        }
+        .p4 img{
+            transform: scaleY(0.8);
+        }
+        .p5{
+            position: absolute;
+            top: 220px;
+            right: 375px;
+            transform: scale(0.5);
+
+        }
+        .p6{
+            position: absolute;
+            top: 180px;
+            right:210px;
+            transform: scale(0.8);
+
+        }
+        .p7{
+            position: absolute;
+            top: 245px;
+            right: 140px;
+            transform: scale(0.7);
+
+        }
+        .p8{
+            position: absolute;
+            top: 120px;
+            right: 520px;
+            transform: scale(0.5);
+
+        }
+        .p9{
+            position: absolute;
+            top: 258px;
+            right: 178px;
+            transform: scale(0.6);
+
+        }
+        .ball{
+            transform: scale(0.5);
+            position: absolute;
+            animation: ball 15s linear infinite alternate;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="sky">
+    <div class="p3"><img src="img/beans.png"></div>
+    <div class="p1"><img src="img/skyline.png"></div>
+<div class="p2"><img src="img/Glockenspiel.png"></div>
+<div class="p4"><img src="img/groundBack.png"></div>
+<div class="p5"><img src="img/dowEventCenter.png"></div>
+<div class="p6"><img src="img/Planetarium.png"></div>
+<div class="p7"><img src="img/groundMid.png"></div>
+<div class="p8"><img src="img/friendshipShell.png"></div>
+<div class="p9"><img src="img/groundFront.png"></div>
+    <div class="ball"><img src="img/balloon.png"></div>
+</div>
+</body>
+</html>

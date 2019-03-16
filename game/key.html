@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>移动小方块</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+		#div1{
+			width:50px;height: 50px;
+			background-color: red;
+			position: absolute;
+			top:100px;
+			left:1000px;
+		}
+		body{
+			background: #000;
+		}
+		h1{
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<h1>请用方向键控制</h1>
+<div id="div1"></div>
+	
+</body>
+<script>
+	var div1=document.getElementById('div1');
+	var timer=null;
+	var l=1000;
+	var t=100;
+	var zuo,shang,you,xia;
+	timer=setInterval(function(){
+		var ev=ev||window.event;
+		if(zuo){
+			l--;
+			if(l<=0){
+				l=0;
+				// alert(l);
+			}
+			div1.style.left=l+'px';
+		}
+		if(shang){
+			t--;
+			if(t<=0){
+				t=0;
+			}
+			div1.style.top=t+'px';
+		}
+		if(you){
+			l++;
+			if(l>=document.documentElement.clientWidth-div1.offsetWidth){
+				l=document.documentElement.clientWidth-div1.offsetWidth;
+			}
+			div1.style.left=l+'px';
+		}
+		if(xia){
+			t++;
+			if(t>=document.documentElement.clientHeight-div1.offsetHeight){
+				t=document.documentElement.clientHeight-div1.offsetHeight;
+			}
+			div1.style.top=t+'px';
+		}
+
+	},1)
+
+	if(l<=0){
+		l==0;
+	}else if(l>=document.documentElement.clientWidth-div1.offsetWidth){
+			l=document.documentElement.clientWidth-div1.offsetWidth;
+	}
+	
+		document.onkeydown=function(ev){
+			var ev=ev||window.event;
+			switch(ev.keyCode){
+				case 37:
+					zuo=true;
+					break;
+				case 38:
+					shang=true;
+					break;
+				case 39:
+					you=true;
+					break;
+				case 40:
+					xia=true;
+					break;
+			}
+
+			document.onkeyup=function(ev){
+			var ev=ev||window.event;
+			switch(ev.keyCode){
+				case 37:
+					zuo=false;
+					break;
+				case 38:
+					shang=false;
+					break;
+				case 39:
+					you=false;
+					break;
+				case 40:
+					xia=false;
+					break;
+			}
+			 console.log(ev.keyCode);
+		}
+	}
+	</script>
+</html>

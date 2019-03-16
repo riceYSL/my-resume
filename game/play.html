@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>play</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+</head>
+<body>
+<canvas id="can" width="700" height="900" style="border: #1a66b3 1px solid"></canvas>
+</body>
+<script>
+    var can=document.getElementById('can');
+    var cvs=can.getContext('2d');
+//关联两个页面
+    var leavl=window.location.href.split('#')[1]-0;
+    if(leavl){
+      leavl=leavl;
+    }else{
+        leavl=0;
+    }
+    console.log(leavl);
+    //创建对象
+var arr=[
+    {roll:3,wait:5,speed:200},
+    {roll:4,wait:8,speed:170},
+    {roll:5,wait:5,speed:130},
+    {roll:5,wait:8,speed:100},
+    {roll:6,wait:10,speed:90},
+    {roll:6,wait:10,speed:80},
+    {roll:7,wait:10,speed:75},
+    {roll:7,wait:11,speed:75},
+    {roll:8,wait:11,speed:75},
+    {roll:9,wait:12,speed:70}
+];
+console.log(arr);
+//大圆数据
+    var centerX=350;//大圆圆心X坐标
+    var centerY=200;//大圆圆心Y坐标
+    var centerR=50;//大圆圆心半径
+//创建转动圆对象
+var Rball=[];
+var distance=150;
+var Rballnum=arr[leavl].roll;
+for(var i=0;i<Rballnum;i++){
+    var angle=(360/Rballnum)*(i+1);
+    Rball.push({angle:angle,numstr:''})
+}
+//创建等待圆的对象
+    var Wball=[];
+    var Wdistance=290;
+    var Wballnum=arr[leavl].wait;
+    for(var j=Wballnum;j>0;j--){
+       Wball.push({angle:'',numstr:j})
+    }
+console.log(Wball);
+//绘制大圆
+    function big(){
+        cvs.globalCompositeOperation='source-over';
+        cvs.beginPath();
+        cvs.arc(centerX,centerY,centerR,0,360,false);
+        cvs.fillStyle='#404040';
+        cvs.fill();
+        cvs.closePath();
+        cvs.beginPath();
+        cvs.font='70px 黑体';
+        cvs.fillStyle='#ecc894';
+        cvs.textAlign='center';
+        cvs.textBaseline='middle';
+        cvs.fillText(leavl+1,centerX,centerY);
+        cvs.closePath();
+    }
+    // big();
+    //绘制转动圆
+    function roll(deg) {
+        Rball.forEach(function (e) {
+           cvs.save();
+           cvs.globalCompositeOperation='destination-over';
+            e.angle=e.angle+deg;
+           if(e.angle>=360){
+               e.angle=0;
+           }
+           var rag=2*Math.PI*e.angle/360;
+           var x=distance*Math.cos(rag)+centerX;
+            var y=distance*Math.sin(rag)+centerY;
+
+           //画转动圆
+            cvs.beginPath();
+            cvs.arc(x,y,8,0,360,false);
+            cvs.fillStyle='#404040';
+            cvs.fill();
+            cvs.beginPath();
+            //画线
+            cvs.beginPath();
+            cvs.moveTo(centerX,centerY);
+            cvs.lineTo(x,y);
+            cvs.stroke();
+            cvs.closePath();
+          //设上来的等待球
+            if(e.numstr!=''){
+                cvs.globalCompositeOperation='source-over';
+                cvs.beginPath();
+                cvs.font='10px 黑体';
+                cvs.fillStyle='#f8fff7';
+                cvs.textAlign='center';
+                cvs.textBaseline='middle';
+                cvs.fillText(e.numstr,x,y);
+            }
+        })
+    }
+    // roll(0);
+    //绘制等待球
+    function wait() {
+        var waitX=centerX;
+        var waitY=distance+Wdistance;
+        Wball.forEach(function (e) {
+
+            cvs.beginPath();
+            cvs.arc(waitX,waitY,8,0,360,false);
+            cvs.fillStyle='#404040';
+            cvs.fill();
+            cvs.beginPath();
+            cvs.beginPath();
+            cvs.globalCompositeOperation='source-over';
+            cvs.font='10px 黑体';
+            cvs.fillStyle='#f8fff7';
+            cvs.textAlign='center';
+            cvs.textBaseline='middle';
+            cvs.fillText(e.numstr,waitX,waitY);
+            waitY+=3*8;
+        });
+    }
+// wait();
+//初始化
+    function into(deg){
+        cvs.clearRect(0,0,800,900);
+        big();
+        wait();
+        roll(deg);
+    }
+    into(0);
+    //设置旋转速度
+    setInterval(function () {
+        cvs.clearRect(0,0,800,900);
+        big();
+        wait();
+        roll(10);
+    },arr[leavl].speed)
+
+//点击添加
+    var state;//用于成功或失败
+    document.onclick=function () {
+        if(Wball.length==0) return;
+        waitY=distance+200;
+        wait();
+
+        var ball=Wball.shift();
+        ball.angle=90;
+        var faild=true;
+
+
+    //判断是否闯关成功
+    Rball.forEach(function (e, index) {
+        if(!faild) return;
+        // console.log(Math.abs(Math.sin((e.angle-ball.angle)/2))*distance);
+        // if (Math.abs(Math.sin((e.angle-ball.angle)/2))*distance<=8){
+        if(Math.abs(e.angle-ball.angle)<(Math.PI*2/Rball.length)){
+
+             state=0;
+             faild=false;
+        }else if(index===Rball.length-1 && Wball.length===0){
+            faild=true;
+            state=1;
+        }
+    });
+Rball.push(ball);
+waitY=distance+Wdistance;
+wait();
+roll(0);
+
+if(state==0){
+    alert('闯关失败');
+    window.location.href='index.html#'+leavl;
+}else if(state==1){
+    alert('闯关成功');
+    leavl++;
+    window.location.href='index.html#'+leavl;
+}
+    };
+
+</script>
+</html>

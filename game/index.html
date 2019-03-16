@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style>
+        a{
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+<h1>见缝插针</h1>
+<a id="leavl" href="play.html">关卡<span>1</span></a>
+</body>
+<script>
+    var a=document.getElementById('leavl');
+    var span=document.getElementsByTagName('span')[0];
+    var leavl=window.location.href.split('#')[1]-0;
+    console.log(leavl);
+    if(leavl){
+        if(leavl==10){
+            leavl=0;
+        }
+        span.innerHTML=leavl+1;
+        a.setAttribute('href','play.html#'+leavl);
+    }
+
+</script>
+</html>

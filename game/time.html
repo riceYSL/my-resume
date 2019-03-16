@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>风景时钟</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500" style="border: #1a66b3 1px solid ;background: black"></canvas>
+<!--<img src="111.jpg">-->
+</body>
+<script>
+    var can=document.getElementById('canvas');
+    console.log(can);
+    var cxt=can.getContext('2d');
+    var img=new Image();
+
+    function clock() {
+        //获取当前时间
+        var now=new Date();
+        var sec=now.getSeconds();
+        var min=now.getMinutes();
+        var hour=now.getHours();
+        var h=now.getHours();
+        hour=hour>12?hour-12:hour;
+        //清空画布
+        cxt.clearRect(0,0,500,500);
+
+        //最外层大圆
+        cxt.beginPath();
+        cxt.arc(250,250,200,0,Math.PI*2,false);
+        cxt.strokeStyle='#efefef';
+        cxt.lineWidth=10;
+        cxt.stroke();
+        cxt.closePath();
+        //背景
+        img.src="111.jpg";
+        cxt.drawImage(img,0,0);
+        cxt.arc(250,250,200,0,Math.PI*2,false);
+        cxt.clip();
+        //显示时间
+        cxt.font='20px 黑体';
+        var str=h+':'+(min>10?min:'0'+min)+':'+(sec>10?sec:'0'+sec)
+        cxt.fillStyle='white';
+        cxt.fillText(str,230,350);
+        var adr='Made In China';
+        cxt.fillText(adr,215,380);
+        //时 刻度
+        cxt.save();
+        cxt.translate(250,250);//将坐标点移到中心
+        cxt.beginPath();
+        for(var i=0;i<=12;i++){
+            cxt.rotate((Math.PI/180)*30);
+            cxt.lineWidth=5;
+            cxt.moveTo(0,-200);
+            cxt.lineTo(0,-180);
+            cxt.strokeStyle='#bdbdbd';
+            cxt.stroke();
+            cxt.closePath();
+        }
+        //分刻度
+        cxt.beginPath();
+        for(var j=0;j<=60;j++){
+            cxt.rotate((Math.PI/180)*6);
+            cxt.lineWidth=5;
+            cxt.moveTo(0,-195);
+            cxt.lineTo(0,-195);
+            cxt.strokeStyle='#bdbdbd';
+            cxt.stroke();
+            cxt.closePath();
+        }
+        cxt.restore();
+        //时针
+        cxt.save();
+        cxt.translate(250,250);//将坐标点移到中心
+        cxt.rotate(hour*(Math.PI/6));
+        cxt.beginPath();
+        cxt.lineWidth=7;
+        cxt.strokeStyle='#f8fff7';
+        cxt.moveTo(0,5);
+        cxt.lineTo(0,-120);
+        cxt.stroke();
+        cxt.closePath();
+        cxt.restore();
+        //分针
+        cxt.save();
+        cxt.translate(250,250);//将坐标点移到中心
+        cxt.rotate(min*(Math.PI/30));
+        cxt.beginPath();
+        cxt.lineWidth=5;
+        cxt.strokeStyle='#bdbdbd';
+        cxt.moveTo(0,5);
+        cxt.lineTo(0,-150);
+        cxt.stroke();
+        cxt.closePath();
+        cxt.restore();
+        //秒针
+        cxt.save();
+        cxt.translate(250,250);//将坐标点移到中心
+        cxt.rotate(sec*(Math.PI/30));
+        cxt.beginPath();
+        cxt.lineWidth=3;
+        cxt.strokeStyle='#d69f87';
+        cxt.moveTo(0,5);
+        cxt.lineTo(0,-170);
+        cxt.stroke();
+        cxt.closePath();
+        cxt.beginPath();
+        cxt.arc(0,0,5,0,Math.PI*2,false);
+        cxt.fillStyle='#f8fff7';
+        cxt.fill();
+        cxt.stroke();
+        cxt.closePath();
+        cxt.beginPath();
+        cxt.arc(0,-150,5,0,Math.PI*2,false);
+        cxt.fillStyle='#f8fff7';
+        cxt.fill();
+        cxt.stroke();
+        cxt.closePath();
+        cxt.restore();
+
+
+    }
+    setInterval(clock,1000)
+</script>
+</html>

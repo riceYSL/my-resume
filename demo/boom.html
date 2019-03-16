@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>碰撞</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+		#box1{width:50px;height: 50px;background-color: green;position: relative;}
+		#box2{width:50px;height: 50px;background-color: red;position:absolute;top:100px;left: 300px;}
+		body{background: #000;}
+		h1{color:#fff;}
+	</style>
+</head>
+<body>
+	<h1>请用鼠标控制绿色方块</h1>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<script>
+	var box1=document.getElementById('box1');
+	var box2=document.getElementById('box2');
+	box1.onmousedown=function(ev){
+		var ev=ev||window.event;
+		var box1_ckl=ev.clientX-box1.offsetLeft;
+		var box1_ckt=ev.clientY-box1.offsetTop;
+		 document.onmousemove=function(ev){
+		 	var ev=ev||window.event;
+		 	var endx=ev.clientX-box1_ckl;
+		 	var endy=ev.clientY-box1_ckt;
+		 	box1.style.left=endx+'px';
+		 	box1.style.top=endy+'px';
+
+		 	var l1=box1.offsetLeft;
+		 	var r1=box1.offsetLeft+box1.offsetWidth;
+		 	var t1=box1.offsetTop;
+		 	var b1=box1.offsetTop+box1.offsetHeight;
+
+		 	var l2=box2.offsetLeft;
+		 	var r2=box2.offsetLeft+box2.offsetWidth;
+		 	var t2=box2.offsetTop;
+		 	var b2=box2.offsetTop+box2.offsetHeight;
+
+		 	if(l1>r2||r1<l2||t1>b2||b1<t2){
+
+		 	}else {
+		 		if(r1<r2){
+			 		box2.style.left=box2.offsetLeft+50+'px';
+			 	}else{
+			 		box2.style.left=box2.offsetLeft-50+'px';
+			 	}
+			 	if(t1>t2){
+			 		box2.style.top=box2.offsetTop-50+'px';
+			 	}else{
+			 		box2.style.top=box2.offsetTop+50+'px';
+			 	}
+		 	}
+			 	
+		 }
+	}
+	box1.onmouseup=function(){
+		document.onmousemove=null;
+	}
+	
+	</script>
+</body>
+</html>

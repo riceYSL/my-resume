@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body{
+			background: rgb(59, 59, 59);
+		}
+		#img{
+            -webkit-mask : url("img/01.png") no-repeat ;
+		}
+		 
+	</style>
+</head>
+<body>
+	<img src="img/07.jpg" alt="" id="img">
+</body>
+<script>
+	var pic_=document.getElementById('img');
+	console.log(pic_.getAttribute('width'))
+</script>
+<script src="/html/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+<script>
+	var img_=$('#img');
+	var doc_=$('body');
+	var width_=img_.width();//获取大图宽
+	var height_=img_.height();//获取大图高
+	var movex=0,movey=0;//起始位置
+	var x=1,y=1//每次位置变化距离
+	var timer=null;
+	function move(){
+		 movex+=x; //横向每次移动x
+		 movey+=y;//纵向每次移动y
+        if(movex<0 || movex>(width_-260)){ //蒙版横向接触两端
+			x*=-1;//反向 若x为正 则变为负 若为负 则变为正
+		}
+		if(movey<0||movey>(height_-260)){//蒙版纵向向接触两端
+			y*=-1;//反向 若y为正 则变为负 若为负 则变为正
+		}
+		img_.css({'-webkit-mask-position':movex + "px"+' '+movey + "px"})
+	}
+	timer=setInterval(move,5);
+
+</script>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="./vue.js"></script>
+	<style>
+		#box{
+			width: 500px;
+			margin: 0 auto;
+		}
+		#box input{
+			margin-right:20px;
+		}
+		fieldset{
+			border: 2px solid rgb(91, 91, 235);
+		}
+	    .pattern{
+			color:red;
+			font-size: 12px;
+		}
+		.btn{
+			width: 150px;
+			height: 30px;
+			color: #ffffff;
+			background: #0080ff;
+			border: none;
+		}
+		table{
+			margin-top: 20px;
+			width: 500px;
+			text-align: center;
+			border-collapse: collapse;
+		}
+		.first{
+			background: #0080ff;
+			color:#fff;
+			height: 40px;
+			line-height: 40px;
+		}
+		tr{
+			height: 40px;
+			line-height: 40px;
+			border-bottom: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<form action="#">
+			<fieldset>
+				<legend>学生信息录入系统</legend>
+				<p>姓名：<input type="text" v-model="data.name" pattern="//"><span class="pattern">4到6位（字母、数字、下划线）</span></p>
+				<p>年龄：<input type="text" v-model="data.age"></p>
+				<p>性别：<input type="text" list="sex" v-model="data.sex">
+					<datalist id="sex" >
+						<option value="男" selected></option>
+						<option value="女"></option>
+					</datalist>
+				
+				</p>
+				<p>手机：<input type="text" v-model="data.phone"></p>
+				<input type="submit" value="创建新用户" class="btn" @click="add">
+			</fieldset>
+		</form>
+		<table>
+			<tr class="first">
+				<td>姓名</td>
+				<td>年龄</td>
+				<td>性别</td>
+				<td>手机</td>
+				<td>删除</td>
+			</tr>
+			<tr v-for="(it,index) in arr">
+					<td>{{it.name}}</td>
+					<td>{{it.age}}</td>
+					<td>{{it.sex}}</td>
+					<td>{{it.phone}}</td>
+					<td><button @click="del(index)">删除</button></td>	
+			</tr>
+		</table>
+	</div>
+</body>
+<script>
+	new Vue({
+		el:'#box',
+		data:{
+			arr:[],
+			data:{
+				name:'',
+				age:'',
+				sex:'',
+				phone:''
+
+			},
+			
+		},
+		methods:{
+			add(){
+                this.arr.push({
+					name:this.data.name,
+					age:this.data.age,
+					sex:this.data.sex,
+					phone:this.data.phone
+					
+				})
+				console.log(this.arr)
+			},
+			del(i){
+                  this.arr.splice(i,1)
+			}
+
+		}
+	})
+</script>
+</html>
