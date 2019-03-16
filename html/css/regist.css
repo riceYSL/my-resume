@@ -1,0 +1,76 @@
+
+/*主体*/
+
+#form-box{
+    width: 1000px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    border: 1px #c9c9c9 solid;
+    border-radius: 5px;
+}
+.input-box{
+    width: 400px;
+    margin: 125px auto;
+    list-style: none;
+}
+.title{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.title span{
+    color: red;
+    font-weight: bolder;
+}
+input{
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px #dadada solid;
+    text-indent: 10px;
+    background: #F7F7F7;
+    border-radius: 7px;
+
+}
+li:nth-child(2) input{
+    float: left;
+    width:65%;
+}
+.input-box img{
+    float: left;
+    width: 30%;
+    margin-left: 3%;
+}
+li:nth-child(3) input{
+
+    float: left;
+    width: 65%;
+}
+li:nth-child(3) span{
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    width: 30%;
+    height: 40px;
+    color: #A2A1A7;
+    background: white;
+    border: 1px #c9c9c9 solid;
+    border-radius: 5px;
+    margin-left: 3%;
+}
+li:nth-child(3) span:hover{
+    cursor: pointer;
+}
+
+li:last-child input{
+    background: red;
+    color: white;
+    font-size: 18px;
+}
+#form-box li{
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+
+

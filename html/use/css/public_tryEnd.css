@@ -1,0 +1,177 @@
+a {
+    text-decoration: none;
+    color: #3e3e3e;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+.title-box{
+    width: 1000px;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+    margin-top: 45px;
+    font-size: 40px;
+    font-weight:normal ;
+}
+.ul_1{
+    overflow: hidden;
+    text-align: center;
+    margin: 42px auto 0;
+}
+.ul_1 li{
+    display: inline-block;
+    width: 166px;
+    height: 50px;
+
+}
+.ul_1 li:first-child{
+    border-bottom: 3px solid #fd5238;
+}
+.ul_1 li a{
+    color: #989ca5;
+    line-height: 50px;
+    font-size: 18px;
+}
+.ul_1 li a:first-child{
+    color: #f85431;
+}
+.main_tz {
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: 1px solid #a7aabd;
+}
+.active {
+    color: #ff523f ;
+    border-bottom: 3px solid #ff523f;
+}
+.main_tz a{
+    font-size: 20px;
+    padding: 0 20px;
+    /*color: #3e3e3e;*/
+}
+.main_tz a:hover {
+    color: #ff523f ;
+    border-bottom: 3px solid #ff523f;
+}
+.main_zt {
+    width: 500px;
+    height: 55px;
+    margin: auto;
+}
+.main_zt>ul>li>a {
+    color: #BABABA;
+}
+.main_zt ul {
+    text-align: center;
+    margin: auto;
+}
+.main_zt ul>li {
+    font-size: 18px;
+    float: left;
+    padding: 0 30px;
+    line-height: 55px;
+}
+/*产品展示*/
+.main_bj {
+    width: 100%;
+    background-color: #eaeaea;
+}
+.main_show {
+    margin: auto;
+    width: 1000px;
+}
+.main_showUl {
+    /*距离*/
+    padding: 10px 0;
+    font-size: 12px;
+    list-style: none;
+    width: 100%;
+    /*border: 1px solid red;*/
+    overflow: hidden;
+}
+
+/*li样式*/
+.main_showUl>li {
+    width: 223px;
+    height: 288px;
+    margin-right: 25px;
+    margin-bottom: 30px;
+    /*背景色*/
+    background-color: #fff;
+    float: left;
+    border: 1px solid #d5d9e4;
+    border-radius: 5px;
+    position: relative;
+}
+.li_img img{
+    width: 223px;
+    height: 100%;
+    border-radius: 5px;
+}
+.li_img>span {
+    text-align: center;
+    display: block;
+    width: 45px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 0 6px 0;
+    color: #fff;
+    background-color: #ff523f;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.li_h2 {
+    text-align: center;
+}
+.li_num {
+    margin-top: 10px;
+    text-align: center;
+}
+.li_numRight {
+    margin-left: 10px;
+}
+.li_num a {
+    border: 1px solid #BABABA;
+    border-radius: 5px;
+    color: #BABABA;
+    /*margin-left: 10px;*/
+    padding: 5px;
+}
+/*hover效果*/
+.li_num a:hover {
+    color: #ff523f;
+    border: 1px solid #ff523f;
+}
+.li_time {
+    text-align: center;
+    margin-top: 15px;
+}
+.li_timeNum {
+    color: #ff523f;
+}
+.li_syTime {
+    text-align: center;
+    margin-top: 10px;
+    color: #BABABA;
+}
+
+/*向下拉加载更多*/
+.more {
+    padding: 20px 0 50px 0;
+    text-align: center;
+}
+.more a {
+    color: #BABABA;
+}
+/*.more a{*/
+/*font-size: 14px;*/
+/*padding-left: 18px;*/
+/*color: #ff523f;*/
+/*background: url("./../../img_icon/more.png") center left no-repeat;*/
+/*}*/

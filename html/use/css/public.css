@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: arial, "Hiragino Sans GB", "Microsoft Yahei", "微软雅黑", "宋体", Tahoma, Arial, Helvetica, STHeiti;
+    font-size: 12px;
+    color: #3e3e3e;
+    margin: 0 auto;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    /*清除li中的空隙，一定要在其父元素中设置*/
+    font-size: 0;
+    -webkit-text-size-adjust: none;
+}
+ul li {
+    font-size: 12px;
+}
+a {
+    text-decoration: none;
+}
+
+/**头部**/
+header {
+    width: 100%;
+    min-width: 1000px;
+    height: 76px;
+    box-shadow: 2px 2px 3px #a2a2a2;
+}
+
+nav {
+    width: 1000px;
+    margin: auto;
+}
+
+.logo {
+    float: left;
+    margin-top: 10px;
+}
+
+.header_nav {
+    height: 76px;
+    color: #fe5341;
+    float: left;
+}
+.header_nav ul {
+    margin-left: 100px;
+}
+
+.header_nav ul > li {
+    float: left;
+    font-size: 18px;
+    line-height: 76px;
+    padding: 0 20px;
+}
+
+.header_nav ul > li a {
+    color: #535353;
+}
+
+.header_nav ul > li a:hover {
+    color: rgb(249, 86, 45);
+}
+
+.nav_search {
+    line-height: 76px;
+    width: 100px;
+    height: 76px;
+    /*border: 1px solid red;*/
+    float: right;
+}
+
+.nav_s{
+    /*display: in;*/
+    padding:7px 15px 15px 15px;
+    background: url("../../img_icon/search.png") no-repeat;
+    -webkit-transition:0.5s;
+    background-size:24px 26px;
+}
+.nav_s:hover {
+    /*transform: background scale(2);*/
+    background-size:28px 30px;
+}
+.nav_login {
+    /*display: inline-block;*/
+    margin-left: 20px;
+    padding: 5px;
+    color: rgb(249, 86, 45);
+    border: 1px solid rgb(249, 86, 45);
+}
+
+/*动画效果*/
+.li_img img:hover {
+    -webkit-animation: myImg 1.5s ease-in-out infinite;
+}
+
+/*动画效果*/
+@keyframes myImg {
+    0%,100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+/*------------------------------------------*/
+
+
+/*底部*/
+.foot {
+    width: 100%;
+    min-width: 1000px;
+    background: #505050;
+    color: #a3a3a3;
+    height: 300px;
+    position: relative;
+}
+.wrap {
+    width: 1000px;
+    margin: auto;
+}
+.foot a {
+    color: #a3a3a3;
+}
+.foot a:hover {
+    color: rgb(249, 86, 45);
+}
+
+.foot dl dt {
+    color: #fff;
+}
+
+dl dd {
+    margin: 0;
+}
+
+.foot {
+    padding: 40px 0 15px;
+}
+
+.foot dl {
+    float: left;
+    font-size: 13px;
+    padding-left: 22px;
+    line-height: 20px;
+}
+
+.foot dl dt {
+    font-size: 16px;
+    padding-bottom: 25px;
+}
+
+.foot dl:nth-child(2) dd:last-child {
+    margin-top: 13px;
+}
+
+.foot dl:nth-child(4) dd a {
+    display: inline-block;
+    width: 69px;
+}
+
+.foot dl:nth-child(1) {
+    padding-left: 0;
+}
+
+.foot dl:nth-child(2) {
+    width: 140px;
+}
+
+.foot dl:nth-child(3) {
+    width: 100px;
+}
+
+.foot dl:nth-child(4) {
+    width: 140px;
+}
+
+.foot dl:nth-child(5) {
+    width: 148px;
+}
+
+.foot dl:nth-child(6) {
+    width: 180px;
+}
+
+.foot .copy {
+    text-align: center;
+    padding-top: 250px;
+    font-size: 13px;
+}
+
+/**返回顶部**/
+.backTop {
+    display: block;
+    transition: background 0.1s ease-in;
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.backTop {
+    background: url("../../img_icon/back.png") no-repeat #e8e8e8 center center;
+}
+
+.backTop:hover {
+    background-color: #c6c6c6;
+}

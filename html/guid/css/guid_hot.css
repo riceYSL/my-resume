@@ -1,0 +1,126 @@
+
+
+/*主体*/
+img:hover{
+    -webkit-animation: qiuqiu 1.5s ease-in-out infinite;
+}
+@keyframes qiuqiu {
+    0%,100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.4;
+    }
+}
+.box{
+    width: 1000px;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+.box>h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 80px;
+}
+.box>ul{
+    overflow: hidden;
+    text-align: center;
+}
+.box>ul>li{
+    display: inline-block;
+    height: 50px;
+    width: 160px;
+}
+.box>ul>li>a{
+    line-height: 50px;
+    font-size: 18px;
+    color: #999999;
+}
+.box>ul>li:last-child{
+    border-bottom: 3px #FD5238 solid;
+}
+.box>ul>li:last-child>a{
+    color: #FD5238;
+}
+article{
+    width: 100%;
+    background: #F7F7F7;
+    overflow: hidden;
+}
+.guid-box{
+    width: 1000px;
+    margin: 20px auto 40px;
+    overflow: hidden;
+}
+.guid-box>h3{
+    display: inline-block;
+    text-indent: 25px;
+    line-height: 65px;
+    font-size: 22px;
+    color: #444444;
+}
+.guid-box>p{
+    line-height: 65px;
+    margin-right: 10px;
+    display: inline-block;
+    float: right;
+}
+.guid-box>p>a{
+    color: #FD514F;
+}
+.guid-box ul{
+    text-align: center;
+    overflow: hidden;
+
+    width: 1000px;
+}
+.guid-box ul>li{
+    position: relative;
+    box-sizing: border-box;
+    width: 22%;
+    float: left;
+    margin-left: 3%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.guid-box ul>li>div{
+    border-radius: 7px;
+    background: white;
+    color: #999999;
+    border: 1px #d3d3d3 solid ;
+    overflow: hidden;
+}
+.guid-box ul>li>div>img{
+    height:130px;
+    width: 100%;
+}
+.guid-box ul>li>img:hover{
+    -webkit-animation: qiuqiu 1.5s ease-in-out infinite;
+}
+
+.guid-box ul>li>div>p{
+    text-align: left;
+    padding: 10px;
+    font-size: 13px;
+}
+.guid-box ul>li>div>p>img{
+    margin-right: 5px;
+}
+.guid-box ul>li>div>p:last-child{
+
+    display: inline-block;
+    float: right;
+}
+.guid-box ul>li>p{
+    margin-top: -5px;
+}
+.more{
+    text-align: center;
+    color:#FD5238 ;
+    margin-bottom: 50px;
+}
+.more:hover{
+    cursor: pointer;
+}

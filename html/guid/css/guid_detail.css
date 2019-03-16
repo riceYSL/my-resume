@@ -1,0 +1,114 @@
+
+/*主体*/
+      #content>ul>li{
+            line-height: 48px;
+            font-size: 12px;
+            color: #a6a4a5;
+            display: inline-block;
+        }
+        #out{
+            background-color: #f7f7f7;
+        }
+        #content{
+            width: 1000px;
+            min-width: 1000px;
+            margin:0 auto;
+        }
+        .center{
+            width: 1000px;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .left{
+            background-color: #fff;
+            width: 700px;
+            float: left;
+        }
+        .right{
+            float:left;
+            width: 270px;
+            
+            margin-left:30px;
+        }
+        .left-p{
+            padding-top: 35px;
+            padding-left: 25px;
+            margin-bottom: 28px;
+            font-size: 24px;
+        }
+        .left span{
+            margin-bottom: 28px;
+            color: #a89e9d;
+            display: inline-block;
+            padding-left: 25px;
+            overflow: hidden;
+        }
+        /*.left_span{
+            display: inline-block;
+            width: 2px;
+            height:15px;
+            background-image: url("../../img_icon/tx.jpg") ;
+            background-position: -15px -3px; 
+        }*/
+        .span{
+            margin-right: 25px;
+            float: right;
+        }
+        .left-p1{
+            margin-top: 25px;
+            padding-left: 25px;
+            font-size: 12px;
+        }
+        h5{
+            text-align: center;
+            font-size: 15px;
+        }
+        .left-content{
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 12px;
+        }
+        .left-img{
+            padding-left: 25px;
+        }
+        .left>p[class*="height"]{
+            margin-top: 30px;
+        }
+        .last1{
+            color: #a2a2a2;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 12px;
+            margin-top: 65px;
+            
+        }
+        .last2{
+            color: #a2a2a2;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 12px;
+            padding-bottom:40px;
+        }
+        .right{
+            overflow: hidden;
+        }
+        .right>span{
+            display: inline-block;
+            width: 130px; 
+            
+            text-align:center;
+            background-color: #fff;
+        }
+        .right>span img{
+
+            margin-top:28px;
+            margin-bottom:15px;
+        }
+        .right>span p{
+            margin-bottom:30px;
+        }
+       .bdsharebuttonbox{
+        float: right;
+       }
+      
+

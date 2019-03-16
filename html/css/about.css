@@ -1,0 +1,100 @@
+
+
+
+/*主体*/
+#box{
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.left{
+    float: left;
+    width: 27%;
+    /*height: 200px;*/
+    margin: 50px 0;
+    border-radius: 7px;
+    background: #F3F3F3;
+}
+.left-box{
+    width: 85%;
+    margin: 30px auto;
+}
+.left h3{
+    text-indent: 15px;
+    line-height: 35px;
+
+    border-bottom:1px solid #8a8a8a;
+}
+.left-box>dl>dt{
+    text-indent: 15px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-top: 10px;
+    color: #555555;
+}
+.left-box>dl>dd{
+    text-indent: 25px;
+    line-height: 30px;
+}
+.left-box a{
+    color: #555555;
+}
+.right{
+    float: left;
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 3%;
+    border-radius: 7px;
+    background: #F3F3F3;
+}
+.right-box{
+    color: #555555;
+    width: 90%;
+    margin: 30px auto;
+}
+.right h3{
+    text-indent: 15px;
+    line-height: 35px;
+    border-bottom:1px solid #8a8a8a;
+}
+.right-box>dl:nth-child(2){
+    margin-top: 30px;
+}
+.right-box>dl:nth-child(3){
+    margin-top: 65px;
+}
+.right-box>dl:nth-child(4){
+    margin-top: 65px;
+}
+.right-box>dl>dt{
+    text-indent: 15px;
+    font-weight: bold;
+    line-height: 50px;
+    margin-top: 10px;
+    color: #555555;
+}
+.right-box>dl>dd{
+    margin-left: 15px;
+    line-height: 30px;
+}
+.right-box a{
+    color: #555555;
+}
+.tell-us>dl{
+    margin-top: 30px;
+}
+.tell-us>dl>dt{
+    text-indent: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-top: 10px;
+    color: #353535;
+}
+.tell-us>dl>dd{
+    margin-left: 35px;
+    line-height: 30px;
+}
+.tell-us a{
+    color: #555555;
+}

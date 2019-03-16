@@ -1,0 +1,18 @@
+[
+  {"img":"img/k1.jpg",
+    "text":"SCiO微型光谱仪",
+    "post":"可以测定食物成分及营养",
+    "price":"￥1212"},
+  {"img":"img/k2.jpg",
+    "text":"B&O BeoSound 35 音响",
+    "post":"支持所有音乐流媒体服务",
+    "price":"￥512"},
+  {"img":"img/k3.jpg",
+    "text":"Mozbii触控吸色笔",
+    "post":"能吸取6500种颜色",
+    "price":"￥暂无"},
+  {"img":"img/k4.jpg",
+    "text":"XRLORER2 航拍飞行器",
+    "post":"搭载自动避障系统",
+    "price":"￥433"}
+]
